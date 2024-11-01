@@ -16,7 +16,36 @@
     char specialize[50];
     char date[12];
  }d;
+FILE *fptr;
 
+int main(){
+    int ch;
+
+    while(1){
+        system("cls");
+        printf("<== Hospital Management System ==>\n");
+        printf("1.Admit Patient\n");
+        printf("2.Patient List\n");
+        printf("3.Discharge Patient\n");
+        printf("4.Add Doctor\n");
+        printf("5.Doctors List\n");
+        printf("0.Exit\n\n");
+        printf("Enter your choice: ");
+        scanf("%d", &ch);
+
+         switch(ch){
+        case 0:
+            exit(0);
+
+        case 1:
+            admitPatient();
+            break;
+
+        case 2:
+            patientList();
+            break;
+
+}
 
 
 
