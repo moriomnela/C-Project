@@ -44,6 +44,9 @@ int main(){
         case 2:
             patientList();
             break;
+        case 3:
+            dischargePatient();
+            break;
 
 }
 
