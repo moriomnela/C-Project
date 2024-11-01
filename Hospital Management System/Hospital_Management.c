@@ -33,7 +33,7 @@ int main(){
         printf("Enter your choice: ");
         scanf("%d", &ch);
 
-         switch(ch){
+        switch(ch){
         case 0:
             exit(0);
 
@@ -47,6 +47,21 @@ int main(){
         case 3:
             dischargePatient();
             break;
+        case 4:
+            addDoctor();
+            break;
+        case 5:
+            doctoeList();
+            break;
+
+        default:
+            printf("Invalid Choice....\n\n");
+        }
+        printf("\m\mPress Any Key To COntinue...");
+        getch();
+    }
+
+        return 0;
 
 }
 
