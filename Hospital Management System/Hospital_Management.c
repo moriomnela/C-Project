@@ -64,10 +64,20 @@ int main(){
 }
 
 void admitPatient(){
-  char mtData[12];
-  time_t t = time(null);
+  char myDate[12];
+  time_t t = time(NULL);
   struct tm tm = *localtime(&t);
   sprintf(myDate,"%02d/%02d/%d",tm.tm_mday,tm.tm_mon+1,tm.tm_year+1900);
+  strcpy(p.date,myDate);
+
+  fp=fopen("patient.txt","ab");
+
+  printf("Enter Patient id:");
+  scanf("%d",&p.id);
+
+  printf("Enter patient name: ");
+  fflush(stdin);
+  gets(p.patientName);
 }
 
 
