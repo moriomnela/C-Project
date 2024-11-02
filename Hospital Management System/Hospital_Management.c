@@ -78,6 +78,19 @@ void admitPatient(){
   printf("Enter patient name: ");
   fflush(stdin);
   gets(p.patientName);
+
+  printf("Enter Patient Address: ");
+  fflush(stdin);
+  gets(p.patientaddress);
+
+  printf("Enter Patient Disease: ");
+  fflush(stdin);
+  gets(p.disease);
+
+  printf("\nPatient Added Successfully");
+
+  fwrite(&p,sizeof(p),1,fp);
+  fclose(fp);
 }
 
 
