@@ -60,12 +60,15 @@ int main(){
         printf("\m\mPress Any Key To COntinue...");
         getch();
     }
-
         return 0;
-
 }
 
-
+void admitPatient(){
+  char mtData[12];
+  time_t t = time(null);
+  struct tm tm = *localtime(&t);
+  sprintf(myDate,"%02d/%02d/%d",tm.tm_mday,tm.tm_mon+1,tm.tm_year+1900);
+}
 
 
 
