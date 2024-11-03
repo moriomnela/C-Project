@@ -16,7 +16,7 @@
     char specialize[50];
     char date[12];
  }d;
-FILE *fptr;
+ FILE *fp;
 
 int main(){
     int ch;
@@ -92,7 +92,20 @@ void admitPatient(){
   fwrite(&p,sizeof(p),1,fp);
   fclose(fp);
 }
+void patienList(){
 
+  system("cls");
+  printf("<=== Patient List ===>\n\n");
+  printf("%-10s %-30s %-30s %-20s %s\n","Id","Patient Name","Address","Disease","Date");
+  printf("----------------------------------------------------\n");
+
+  fp=fopen("patient.txt","rb");
+  while(fread(&p,sizeof(p),1,fp)==1){
+    printf("%-10d %-30s %-30s %-20s %s\n", p.id, p.patientName, p.patientAddress, p.disease, p.date);
+  }
+  fclose(fp);
+
+}
 
 
 
