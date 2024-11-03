@@ -4,9 +4,9 @@
 
  struct patient{
     int id;
-    char patientname[50];
-    char patientaddress[50];
-    char patientdisease[50];
+    char patientName[50];
+    char patientAddress[50];
+    char patientDisease[50];
     char date[12];
  }p;
  struct doctor {
@@ -81,11 +81,11 @@ void admitPatient(){
 
   printf("Enter Patient Address: ");
   fflush(stdin);
-  gets(p.patientaddress);
+  gets(p.patientAddress);
 
   printf("Enter Patient Disease: ");
   fflush(stdin);
-  gets(p.disease);
+  gets(p.patientDisease);
 
   printf("\nPatient Added Successfully");
 
