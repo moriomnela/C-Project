@@ -1,10 +1,18 @@
 #include<stdio.h>
+#include<time.h>
 char name[20];
 int dip_amount;
 int amount=10000;
 int acc_no;
 
 void menu();
+void deposit_money();
+void withdraw_money();
+void transfer_money();
+void account_details();
+void transaction_details();
+void last_details();
+
 int main(){
   int choice;
   printf("Enter your name:");
@@ -56,6 +64,10 @@ void deposit_money(){
     time(&tm);
 
    FILE *fptr=fopen("Account.txt","a");
+   if(fptr == NULL){
+    printf("Error opening file.\n");
+    return;
+   }
    printf("Deposit Money \n");
    printf("enter the amount \n");
    scanf("%d", &dip_amount);
@@ -63,8 +75,8 @@ void deposit_money(){
    amount += dip_amount;
    printf("Money Deposit\n");
    printf("Current balance : %d",amount);
-   fprintf(ptr,"Rs%d had been deposited to your account \n",dip_amount);
-   fprintf(ptr,"Date of transaction %s", ctime(&tm));
+   fprintf(fptr,"Rs%d had been deposited to your account \n",dip_amount);
+   fprintf(fptr,"Date of transaction %s", ctime(&tm));
 }
 
 
