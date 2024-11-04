@@ -23,12 +23,16 @@ int main(){
        break;
     case 2:
         withdraw_money();
+        break;
     case 3:
         transfer_money();
+        break;
     case 4:
         account_details();
+        break;
     case 5:
         transaction_details();
+        break;
     case 6:
         last_details();
         exit(0);
@@ -51,7 +55,7 @@ void deposit_money(){
     time_t tm;
     time(&tm);
 
-   FILE *ptr=fopen("Account.txt","a");
+   FILE *fptr=fopen("Account.txt","a");
    printf("Deposit Money \n");
    printf("enter the amount \n");
    scanf("%d", &dip_amount);
