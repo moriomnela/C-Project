@@ -57,7 +57,7 @@ int main(){
         default:
             printf("Invalid Choice....\n\n");
         }
-        printf("\m\mPress Any Key To COntinue...");
+        printf("\n\nPress Any Key To Continue...");
         getch();
     }
         return 0;
@@ -97,7 +97,7 @@ void patientList(){
   system("cls");
   printf("<=== Patient List ===>\n\n");
   printf("%-10s %-30s %-30s %-20s %s\n","Id","Patient Name","Address","Disease","Date");
-  printf("----------------------------------------------------\n");
+  printf("--------------------------------------------------------------------------------------------------------\n");
 
   fp=fopen("patient.txt","rb");
   while(fread(&p,sizeof(p),1,fp)==1){
