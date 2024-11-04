@@ -48,6 +48,10 @@ void menu(){
    printf("6.Exit\n");
 }
 void deposit_money(){
+    time_t tm;
+    time(&tm);
+
+   FILE *ptr=fopen("Account.txt","a");
    printf("Deposit Money \n");
    printf("enter the amount \n");
    scanf("%d", &dip_amount);
@@ -55,6 +59,8 @@ void deposit_money(){
    amount += dip_amount;
    printf("Money Deposit\n");
    printf("Current balance : %d",amount);
+   fprintf(ptr,"Rs%d had been deposited to your account \n",dip_amount);
+   fprintf(ptr,"Date of transaction %s", ctime(&tm));
 }
 
 
