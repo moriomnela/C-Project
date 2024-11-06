@@ -84,8 +84,16 @@ void deposit_money(){
     fclose(fptr);
 }
 
-
-
+void withdraw_money() {
+    time_t tm;
+    time(&tm);
+    FILE *fptr = fopen("Account.txt", "a");
+    if (fptr == NULL) {
+        printf("Error opening file.\n");
+        return;
+    }
+    printf("Enter the amount to withdraw: ");
+    scanf("%d", &amount);
 
 
 
