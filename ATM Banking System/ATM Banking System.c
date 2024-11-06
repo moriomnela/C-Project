@@ -3,6 +3,7 @@
 char name[20];
 int dip_amount;
 int amount=10000;
+int withdraw_amount;
 int acc_no;
 
 void menu();
@@ -93,9 +94,21 @@ void withdraw_money() {
         return;
     }
     printf("Enter the amount to withdraw: ");
-    scanf("%d", &amount);
+    scanf("%d", &withdraw_amount);
 
-
+  if (withdraw_amount > 0 && withdraw_amount <= amount) {
+       amount -= withdraw_amount;
+        printf("Withdrawal successful!\n");
+        printf("Current balance: %d\n", amount);
+        fprintf(fptr, "Rs%d withdrawn from your account.\n", withdraw_amount);
+        fprintf(fptr, "Date of transaction: %s\n", ctime(&tm));
+    } else if (withdraw_amount > amount) {
+        printf("Insufficient balance.\n");
+    } else {
+        printf("Invalid withdrawal amount.\n");
+    }
+    fclose(fptr);
+}
 
 
 
