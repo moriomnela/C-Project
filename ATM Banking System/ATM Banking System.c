@@ -63,7 +63,7 @@ void deposit_money(){
     time_t tm;
     time(&tm);
 
-   FILE *fptr=fopen("Account.txt","a");
+   FILE *fptr = fopen("Account.txt", "a");
    if(fptr == NULL){
     printf("Error opening file.\n");
     return;
@@ -72,11 +72,16 @@ void deposit_money(){
    printf("enter the amount \n");
    scanf("%d", &dip_amount);
 
-   amount += dip_amount;
-   printf("Money Deposit\n");
-   printf("Current balance : %d",amount);
-   fprintf(fptr,"Rs%d had been deposited to your account \n",dip_amount);
-   fprintf(fptr,"Date of transaction %s", ctime(&tm));
+   if (dip_amount > 0) {
+        amount += dip_amount;
+        printf("Deposit successful!\n");
+        printf("Current balance: %d\n", amount);
+        fprintf(fptr, "Rs%d deposited to your account.\n", dip_amount);
+        fprintf(fptr, "Date of transaction: %s\n", ctime(&tm));
+    } else {
+        printf("Invalid deposit amount.\n");
+    }
+    fclose(fptr);
 }
 
 
