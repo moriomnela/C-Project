@@ -118,7 +118,8 @@ void transfer_money() {
         printf("Error opening file.\n");
         return;
     }
-
+printf("Enter the amount to transfer: ");
+    scanf("%d", &transfer_amount);
 
 
 
