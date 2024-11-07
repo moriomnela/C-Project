@@ -118,8 +118,21 @@ void transfer_money() {
         printf("Error opening file.\n");
         return;
     }
-printf("Enter the amount to transfer: ");
+    printf("Enter the amount to transfer: ");
     scanf("%d", &transfer_amount);
 
+ if (transfer_amount > 0 && transfer_amount <= balance) {
+        balance -= transfer_amount;
+        printf("Transfer successful!\n");
+        printf("Current balance: %d\n", balance);
+        fprintf(fptr, "Rs%d transferred from your account.\n", transfer_amount);
+        fprintf(fptr, "Date of transaction: %s\n", ctime(&tm));
+    } else if (transfer_amount > balance) {
+        printf("Insufficient balance.\n");
+    } else {
+        printf("Invalid transfer amount.\n");
+    }
 
+    fclose(fptr);
+}
 
