@@ -110,6 +110,14 @@ void withdraw_money() {
     fclose(fptr);
 }
 
+void transfer_money() {
+    time_t tm;
+    time(&tm);
+    FILE *fptr = fopen("Account.txt", "a");
+    if (fptr == NULL) {
+        printf("Error opening file.\n");
+        return;
+    }
 
 
 
